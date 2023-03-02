@@ -51,19 +51,40 @@ function ControlScreen() {
         <span className='checkmark'>Show Power of off here </span>
       </label>
       <label id='label-volume'>
-        <input type='range'  id='volume' />
+        <input type='range' 
+               id='volume' 
+               value={volume}
+               onChange={(e) => volumeHandler(e.target.value)}
+    />
         <span id='volume-display'>Volume : Show volume here </span>
       </label>
     </div>
-  )
+  );
 }
 
 function App() {
+  const [volume,setVolume]=useState(0);
+  const[on,setOn]=useState(false);
+  
+  const volumeHandler=(val)=>{
+    setVolume(val);
+  };
+  const onHandler = () => {
+    setOn(!on);
+  };
   return (
     <div id='drum-machine'>
-      
-      <Pads/>
-      <ControlScreen  />
+    <Pads power={on}/>
+<br/>
+    <br/>
+    <br/>
+   
+      <ControlScreen  
+volume={volume}
+volumeHandler={volumeHandler}
+on={on}
+onHandler={onHandler}
+/>
     </div>
   );
 }
