@@ -16,18 +16,20 @@ function Pads() {
     return (
       <div id='div-pads'>
         {keypadCode.map((pad, idx) => {
-          console.log(pad + idx)
+          //console.log(pad + idx)
           return (
             <Pad
               id={pad+idx}
               key={pad+idx}
               handleClick={playSound}
-              element={pad} />
+              element={pad} 
+                  power={power}
+    />
           );
         })}
         <div id='display'> {audioName} </div>  
       </div>
-    )
+    );
   }
 
   export default Pads ; 
