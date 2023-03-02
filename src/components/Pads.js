@@ -5,10 +5,12 @@ import {bank1} from "./App"
 
 function Pads() {
     const keypadCode = Object.keys(bank1);
+    const [audioName,setAudioName]=useState(null);
 
 
     const playSound = e => {
-    }
+        setAudioName(e.name);
+    };
 
 
     return (
@@ -23,7 +25,7 @@ function Pads() {
               element={pad} />
           );
         })}
-        <div id='display'> Show the name of current audio here </div>  
+        <div id='display'> {audioName} </div>  
       </div>
     )
   }
