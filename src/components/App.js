@@ -43,12 +43,12 @@ export const bank1 = {
 }
 
 
-function ControlScreen() {
+function ControlScreen({volume,volumeHandler,on,onHandler}) {
   return (
     <div id='control-screen'>
       <label id='label-power'>
-        <input type='checkbox' id='power' />
-        <span className='checkmark'>Show Power of off here </span>
+        <input type='checkbox' id="power" onClick={() => onHandler()} />
+        <span className="checkmark">{on? "ON" : "OFF"} </span>
       </label>
       <label id='label-volume'>
         <input type='range' 
