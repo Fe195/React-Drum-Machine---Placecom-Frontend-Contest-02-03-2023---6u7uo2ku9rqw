@@ -26,7 +26,7 @@ const playSound = e => {
         })}
         <div id='display'> {audioName} </div>  
       </div>
-    );
+    )
   }
 
   export default Pads ; 
