@@ -1,19 +1,16 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import Pad from "./Pad";
 import {bank1} from "./App"
-
 
 function Pads() {
     const keypadCode = Object.keys(bank1);
     const [audioName,setAudioName]=useState(null);
 
-
-    const playSound = e => {
+const playSound = e => {
         setAudioName(e.name);
     };
 
-
-    return (
+ return (
       <div id='div-pads'>
         {keypadCode.map((pad, idx) => {
           //console.log(pad + idx)
